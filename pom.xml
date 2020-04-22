@@ -17,13 +17,14 @@
 	<packaging>war</packaging>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>12</java.version>
 		<tomcat.version>8.0.3</tomcat.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
+			<version>2.2.11</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
