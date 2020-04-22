@@ -14,6 +14,7 @@ public class NimiRepository {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
+	//katsoo onko kirjautuneella henkilöllä juoksuhomma taulussa jo tuloksia
 	@Transactional(readOnly = true)
 	public List<Juoksuhomma> findAllNimet() {
 		return jdbcTemplate.query("select * from juoksuhomma, user where juoksuhomma.nimimerkki=user.username", new JuoksuRowMapper());

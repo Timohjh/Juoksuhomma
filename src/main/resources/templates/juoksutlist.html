@@ -57,9 +57,9 @@
 				<td th:text="${juoksu.kesto}"></td>
 				<td th:text="${juoksu.pvm}"></td>
 				<td th:text="${juoksu.lisatieto}"></td>
-				<!-- <td th:text="${juoksu.category.name}"></td>
-				<!--   <td sec:authorize="hasAuthority('ADMIN')" id="poisto"><a th:href="@{/delete/{id}(id=${juoksu.id})}" class="btn btn-danger">Poista</a></td>
-				<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/edit/{id}(id=${juoksu.id})}" class="btn btn-primary">Muokkaa</a></td>-->
+				<!--  <td th:text="${juoksu.category.name}"></td>-->
+				<td id="poisto"><a th:href="@{/deleteu/{id}(id=${juoksu.id})}" class="btn btn-danger">Poista</a></td>
+				<td ><a th:href="@{/editu/{id}(id=${juoksu.id})}" class="btn btn-primary">Muokkaa</a></td>
 
 			</tr> 
 
