@@ -17,7 +17,7 @@ public class JuoksuhommaApplication extends SpringBootServletInitializer {
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder
 	application) {
 	return application.sources(JuoksuhommaApplication.class);
-	}
+	} 
 	private static final Logger log = LoggerFactory.getLogger(JuoksuhommaApplication.class);
 	public static void main(String[] args) {
 		SpringApplication.run(JuoksuhommaApplication.class, args);

@@ -1,4 +1,4 @@
-package com.projekti.juoksuhomma.juoksuhomma;
+/*package com.projekti.juoksuhomma.juoksuhomma;
 
 
 import org.junit.Test;
@@ -25,3 +25,4 @@ public class SmokeTesting {
 	assertThat(Usercontroller).isNotNull();
 	}
 	}
+*/

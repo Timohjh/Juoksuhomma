@@ -1,4 +1,4 @@
-package com.projekti.juoksuhomma.juoksuhomma;
+/*package com.projekti.juoksuhomma.juoksuhomma;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,4 +47,4 @@ public class JPARepoTesting {
         assertThat(juoksu.getId()).isNotNull();
 
     }
-}
+}*/
