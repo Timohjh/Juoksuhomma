@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Juoksulista</title>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<link type="text/css" rel="stylesheet" href="css/style.css" th:href="@{css/style.css}" />
+
+</head>
+<body>
+	<h1>Lisää lenkki</h1>
+	<div>
+		<form th:object="${juoksuhomma}" th:action="@{save}" action="#"
+			method="post" id="lisaamis">
+
+			<label for="nimimerkki">Nimimerkki</label> <input type="text"
+				id="nimimerkki" th:field="*{nimimerkki}" /><br> <label for="matka">Matka</label>
+			<input type="text" id="matka" th:field="*{matka}" /><br> <label
+				for="kesto">Kesto (Minuutteina)</label> <input type="text" id="kesto"
+				th:field="*{kesto}" /><br> <label for="pvm">Päivämäärä (pp-kk-vv)</label> <input
+				type="text" id="pvm" th:field="*{pvm}" /><br> <label for="lisatieto">Lisätietoja</label>
+			<input type="text" id="lisatieto" th:field="*{lisatieto}" />
+
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="category">Kategoria</label> <select id="category"
+				th:field="*{category}">
+				<option th:each="category: ${categories}"
+					th:value="${category.categoryId}" th:text="${category.name}"></option>
+			</select>
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" value="Lisää" id="nappi"></input>
+		</form>
+	</div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Juoksulista</title>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<link type="text/css" rel="stylesheet" href="css/style.css" th:href="@{css/style.css}" />
+
+</head>
+<body>
+	<h1>Muokkaa lenkkiä</h1>
+
+	<form th:object="${juoksuhomma}" th:action="@{../save}" action="#" method="post">
+		<input type="hidden" th:field="*{id}" class="form-control"/>
+		Nimimerkki <input type="text" th:field="*{nimimerkki}" /><br>
+		Matka (km) <input type="text" th:field="*{matka}" /><br>
+		Kesto (Min) <input type="text" th:field="*{kesto}" /><br>
+		Päivämäärä (pp-kk-vv) <input type="text" th:field="*{pvm}" /> <br>
+		Lisätietoja <input type="text" th:field="*{lisatieto}" />
+		<div style="clear: both; display: block; height: 10px;"></div>
+		<label for="categorylist">Kategoria</label>
+			 <select id="categorylist" th:field="*{category}" class="form-control">
+       			<option th:each="category: ${categories}" th:value="${category.categoryId}" th:text="${category.name}"></option>
+    		</select>
+    		
+			<div style="clear: both; display: block; height: 10px;"></div>
+		<input type="submit" class="btn btn-success" value="Save"></input>
+	</form>
+
+
+</body>
+
+
+</html>

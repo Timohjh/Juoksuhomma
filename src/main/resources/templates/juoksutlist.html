@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Juoksulista</title>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<link type="text/css" rel="stylesheet" href="css/style.css"
+	th:href="@{css/style.css}" />
+
+</head>
+<body>
+	<h1 id="otsikko">Kaikki lenkit</h1>
+	<table id="taulukko" class="table table-striped">
+		<tbody>
+			<tr id="otsikot">
+				<td>Nimimerkki</td>
+				<td>Matka (km)</td>
+				<td>Kesto (min)</td>
+				<td>Päivämäärä</td>
+				<td>Lisätietoja</td>
+				<td>Kategoria</td>
+
+			</tr>
+			<tr th:each="juoksu : ${juoksut}">
+				<td th:text="${juoksu.nimimerkki}"></td>
+				<td th:text="${juoksu.matka}"></td>
+				<td th:text="${juoksu.kesto}"></td>
+				<td th:text="${juoksu.pvm}"></td>
+				<td th:text="${juoksu.lisatieto}"></td>
+				<td th:text="${juoksu.category.name}"></td>
+				<td sec:authorize="hasAuthority('ADMIN')" id="poisto"><a
+					th:href="@{/delete/{id}(id=${juoksu.id})}" class="btn btn-danger">Poista</a></td>
+				<td sec:authorize="hasAuthority('ADMIN')"><a
+					th:href="@{/edit/{id}(id=${juoksu.id})}" class="btn btn-primary">Muokkaa</a></td>
+			</tr>
+
+		</tbody>
+
+
+	</table>
+	<h1 id="otsikko">Omat Lenkit</h1>   
+	<table id="taulukko" class="table table-striped">
+		<tbody>
+			<tr id="otsikot">
+				<td>Nimimerkki</td>
+				<td>Matka (km)</td>
+				<td>Kesto (min)</td>
+				<td>Päivämäärä</td>
+				<td>Lisätietoja</td>
+				<td>Kategoria</td>
+
+			</tr>
+
+			<tr th:each="juoksu : ${omatjuoksut}">
+				<td th:text="${juoksu.nimimerkki}"> </td>
+				<td th:text="${juoksu.matka}"></td>
+				<td th:text="${juoksu.kesto}"></td>
+				<td th:text="${juoksu.pvm}"></td>
+				<td th:text="${juoksu.lisatieto}"></td>
+				<!-- <td th:text="${juoksu.category.name}"></td>
+				<!--   <td sec:authorize="hasAuthority('ADMIN')" id="poisto"><a th:href="@{/delete/{id}(id=${juoksu.id})}" class="btn btn-danger">Poista</a></td>
+				<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/edit/{id}(id=${juoksu.id})}" class="btn btn-primary">Muokkaa</a></td>-->
+
+			</tr> 
+
+		</tbody>
+
+
+	</table>
+	<a href="/addjuoksu" class="btn btn-primary" id="lisaysnappi">Lisää
+		lenkki</a>
+
+
+</body>
+
+
+</html>
